@@ -1,12 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class User extends AbstractUser implements ChatMember {
+public class HealthShop extends AbstractShop implements ChatMember {
     private List<Chat> chatList;
 
-    public User(String login, String password) {
+    HealthShop(String login, String password) {
         super(login, password);
         chatList = new ArrayList<>();
+    }
+
+    @Override
+    public String getShopType() {
+        return "Herb";
     }
 
     @Override
@@ -15,7 +20,7 @@ public class User extends AbstractUser implements ChatMember {
             System.out.println("No such a chat...");
             return false;
         }
-        chatList.get(chatId).sendNewMessage("User: " + message);
+        chatList.get(chatId).sendNewMessage("Shop: " + message);
         return true;
     }
 

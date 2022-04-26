@@ -19,11 +19,17 @@ public abstract class AbstractUser {
     }
 
     public boolean signIn() {
+        if (isAuthorized()) {
+            System.out.println("You are already authorized...");
+            return true;
+        }
         authorized = server.checkUser(login, password);
         return true;
     }
 
-    abstract boolean signUp();
+    public boolean signUp() {
+        return server.registerUser(login, password, this);
+    }
 
     public void setLogin(String login) {
         this.login = login;

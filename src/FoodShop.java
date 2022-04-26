@@ -1,10 +1,13 @@
 public class FoodShop extends AbstractShop {
+    protected Food shopType;
+
     FoodShop(String login, String password, Food shopType) {
-        super(login, password, shopType);
+        super(login, password);
+        this.shopType = shopType;
     }
 
     @Override
-    boolean signUp() {
-        return false;
+    public String getShopType() {
+        return shopType.toString();
     }
 }
