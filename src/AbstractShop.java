@@ -1,5 +1,8 @@
 public abstract class AbstractShop extends AbstractUser {
-    AbstractShop(String login, String password) {
+    protected Food shopType;
+
+    AbstractShop(String login, String password, Food shopType) {
         super(login, password);
+        this.shopType = shopType;
     }
 }

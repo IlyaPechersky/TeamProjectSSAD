@@ -18,7 +18,11 @@ public abstract class AbstractUser {
         server = Server.getInstance();
     }
 
-    abstract boolean signIn();
+    public boolean signIn() {
+        authorized = server.checkUser(login, password);
+        return true;
+    }
+
     abstract boolean signUp();
 
     public void setLogin(String login) {

@@ -7,7 +7,6 @@ public class Server {
 
     private Server() {
         usersDB = new HashMap<>();
-        usersDB.put("Guest", "#");
     }
 
     public static Server getInstance() {
@@ -17,7 +16,7 @@ public class Server {
         return instance;
     }
 
-    public static boolean checkUser(String login, String password) {
+    public boolean checkUser(String login, String password) {
         if (usersDB.containsKey(login)) {
             System.out.println("No such User: {" + login + "}");
             return false;
