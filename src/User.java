@@ -1,8 +1,16 @@
-public abstract class User {
-    protected String login;
-    protected String password;
-    protected boolean authorized;
+public class User extends AbstractUser implements ChatMember {
+    @Override
+    boolean signIn() {
+        return false;
+    }
 
-    abstract boolean signIn();
-    abstract boolean signUp();
+    @Override
+    boolean signUp() {
+        return false;
+    }
+
+    @Override
+    public boolean sendMessage() {
+        return false;
+    }
 }
