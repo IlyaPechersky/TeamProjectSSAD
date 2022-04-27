@@ -1,0 +1,6 @@
+HealthShop loginH passwordH true
+shalfey romashka romashka 
+FoodShop FRUIT loginF passwordF true
+banana banana apple apple lemon 
+User login2 password2
+User login1 password1
