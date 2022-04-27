@@ -3,27 +3,27 @@ public class Checker {
         return line.length() >= length;
     }
 
-    public static boolean checkForLowercase(String line) {
+    private static boolean checkForLowercase(String line) {
         return !line.equals(line.toUpperCase());
     }
 
-    public static boolean checkForCapital(String line) {
+    private static boolean checkForCapital(String line) {
         return !line.equals(line.toLowerCase());
     }
 
-    public static boolean checkForLetter(String line) {
+    private static boolean checkForLetter(String line) {
         return checkForLowercase(line) || checkForCapital(line);
     }
 
-    public static boolean isDigit(char symbol) {
+    private static boolean isDigit(char symbol) {
         return '0' <= symbol && symbol <= '9';
     }
 
-    public static boolean isLetter(char symbol) {
+    private static boolean isLetter(char symbol) {
         return ('a' <= symbol && symbol <= 'z') || ('A' <= symbol && symbol <= 'Z');
     }
 
-    public static boolean checkForDigit(String line) {
+    private static boolean checkForDigit(String line) {
         boolean anyDigit = false;
         for (int index = 0; index < line.length(); ++index) {
             if (isDigit(line.charAt(index))) {
@@ -34,7 +34,7 @@ public class Checker {
         return anyDigit;
     }
 
-    public static boolean checkForCorrectness(String line) {
+    private static boolean checkForCorrectness(String line) {
         boolean otherSymbol = false;
         for (int index = 0; index < line.length(); ++index) {
             if (!isDigit(line.charAt(index)) && !isLetter(line.charAt(index))) {
@@ -51,7 +51,6 @@ public class Checker {
             1. Length of pass - more or equal than 8 characters
             2. Should contain at least 1 capital letter, 1 lowercase letter and 1 digit
             3. Only letter, digits and symbol "_"
-            4.
          */
         boolean correctLength = checkForLength(password, 8);
         boolean anyLowercase = checkForLowercase(password);
@@ -67,7 +66,6 @@ public class Checker {
             1. Length of pass - more or equal than 4 characters
             2. Should contain at least 1 letter
             3. Only letter, digits and symbol "_"
-            4.
          */
         boolean correctLength = checkForLength(login, 4);
         boolean anyLetter = checkForLetter(login);
