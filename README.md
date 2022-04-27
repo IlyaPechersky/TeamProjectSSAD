@@ -22,4 +22,20 @@ We dicided to use factory method to be able to initialize both types of shops(Fo
 - [`README.md`](README.md) - text file for structuring information for a project
 - [`database.txt`](database.txt) - database of users/shops with their logins and passwords
 
+# Build and launch
+
+### Example (Windows)
+
+#### Building a project
+
+Clone the project to your device via [Git for Windows](https://gitforwindows.org/) (or write this link):
+
+```shell
+git clone https://github.com/IlyaPechersky/TeamProjectSSAD.git
+```
+### Launch java project
+
+Run this java file:
+- [`src`](src)/[`Application.java`](Application.java)
+
 
