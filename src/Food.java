@@ -1,5 +1,11 @@
 public enum Food {
-    FRUIT,
-    VEGETABLE,
-    GROCERY
+    FRUIT("fruit"),
+    VEGETABLE("vegetable"),
+    GROCERY("grocery");
+
+    private String type;
+
+    Food(String type) {
+        this.type = type;
+    }
 }

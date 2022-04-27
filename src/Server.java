@@ -18,6 +18,10 @@ public class Server {
         return instance;
     }
 
+    public boolean checkLogin(String login) {
+        return loginToPasswordDB.containsKey(login);
+    }
+
     public boolean checkUser(String login, String password) {
         if (loginToPasswordDB.containsKey(login)) {
             System.out.println("No such User: {" + login + "}");
@@ -40,5 +44,9 @@ public class Server {
         loginToPasswordDB.put(login, password);
         loginToUserDB.put(login, user);
         return true;
+    }
+
+    public AbstractUser getUser(String login) {
+        return loginToUserDB.getOrDefault(login, null);
     }
 }
