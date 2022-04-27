@@ -27,6 +27,11 @@ public abstract class AbstractUser {
         return server.registerUser(login, password, this);
     }
 
+    @Override
+    public String toString() {
+        return login;
+    }
+
     public void setLogin(String login) {
         this.login = login;
     }
