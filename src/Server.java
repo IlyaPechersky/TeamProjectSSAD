@@ -36,10 +36,22 @@ public class Server {
         if (loginToPasswordDB.containsKey(login)) {
             return false;
         }
-        // todo add checker for correctness;
-        loginToPasswordDB.put(login, password);
-        loginToUserDB.put(login, user);
-        return true;
+        if (Checker.checkLogin(login) && Checker.checkPassword(password)) {
+            loginToPasswordDB.put(login, password);
+            loginToUserDB.put(login, user);
+            return true;
+        } else {
+            System.out.println("You have incorrect login or password, please re-enter following these rules:");
+            System.out.println("For login:\n" +
+                    "1. Length of pass - more or equal than 4 characters\n" +
+                    "2. Should contain at least 1 letter\n" +
+                    "3. Only letter, digits and symbol \"_\"");
+            System.out.println("For password:\n" +
+                                "1. Length of pass - more or equal than 8 characters\n" +
+                                "2. Should contain at least 1 capital letter, 1 lowercase letter and 1 digit\n" +
+                                "3. Only letter, digits and symbol \"_\"");
+            return false;
+        }
     }
 
     public AbstractUser getUser(String login) {
