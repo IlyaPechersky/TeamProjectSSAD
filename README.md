@@ -17,7 +17,7 @@ We dicided to use factory method to be able to initialize both types of shops(Fo
 # Project structure
 
 - [`.idea`](.idea) - xml files for project
-- [`out`](out)/[`production`](production) - classes of app
+- [`out`](out)/[`production`](production)/[`TeamProjectSSAD`](TeamProjectSSAD) - classes of app
 - [`src`](src) - java files for app
 - [`README.md`](README.md) - text file for structuring information for a project
 - [`database.txt`](database.txt) - database of users/shops with their logins and passwords
