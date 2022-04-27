@@ -105,7 +105,7 @@ public class Server {
 
     public boolean registerUser(String login, String password, AbstractUser user) {
         if (loginToPasswordDB.containsKey(login)) {
-            System.out.println("This login already exit, please SignIn or create a new login:");
+            System.out.println("This login already exit, please SignIn or create a new login");
             return false;
         }
         if (Checker.checkLogin(login) && Checker.checkPassword(password)) {
