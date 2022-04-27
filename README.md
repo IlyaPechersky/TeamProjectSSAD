@@ -42,5 +42,5 @@ git clone https://github.com/IlyaPechersky/TeamProjectSSAD.git
 Run this java file:
 - [`src`](src)/[`Application.java`](Application.java)
 
-![UML DIAGRAM](https://github.com/IlyaPechersky/TeamProjectSSAD/blob/main/.idea/photo_2022-04-27%2022.27.10.jpeg)
+![UML DIAGRAM](https://github.com/IlyaPechersky/TeamProjectSSAD/blob/main/.idea/photo_2022-04-27%2022.51.25.jpeg)
 
