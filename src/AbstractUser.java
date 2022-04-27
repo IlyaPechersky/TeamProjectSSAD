@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 public abstract class AbstractUser {
     protected String login;
     protected String password;
@@ -7,18 +9,11 @@ public abstract class AbstractUser {
     AbstractUser(String login, String password) {
         this.login = login;
         this.password = password;
-    }
-
-    AbstractUser() {
-        this("Guest", "#");
-    }
-
-    {
         authorized = false;
-        server = Server.getInstance();
     }
 
-    public boolean signIn() {
+    public boolean signIn() throws FileNotFoundException {
+        server = Server.getInstance();
         if (isAuthorized()) {
             System.out.println("You are already authorized...");
             return true;
@@ -27,7 +22,8 @@ public abstract class AbstractUser {
         return true;
     }
 
-    public boolean signUp() {
+    public boolean signUp() throws FileNotFoundException {
+        server = Server.getInstance();
         return server.registerUser(login, password, this);
     }
 

@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Application {
@@ -5,7 +6,7 @@ public class Application {
     private static Scanner scanner;
     private static Server server;
 
-    private static void signIn() {
+    private static void signIn() throws FileNotFoundException {
         System.out.println("Please, write your login and password!");
 
         System.out.print("login: ");
@@ -25,7 +26,7 @@ public class Application {
         }
     }
 
-    private static void signUp(String userType) {
+    private static void signUp(String userType) throws FileNotFoundException {
         System.out.println("Please, write your login and password!");
 
         System.out.print("login: ");
@@ -73,7 +74,7 @@ public class Application {
         System.out.println("You are registered");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         scanner = new Scanner(System.in);
         server = Server.getInstance();
         System.out.println("Welcome to our console Shop!");
@@ -90,5 +91,7 @@ public class Application {
             String userType = scanner.next();
             signUp(userType);
         }
+
+        server.loadDataBase();
     }
 }
