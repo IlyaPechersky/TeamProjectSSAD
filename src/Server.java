@@ -20,6 +20,8 @@ public class Server {
 
     private void readDataBase() throws FileNotFoundException {
         scanner = new Scanner(new File("database.txt"));
+        HealthMethod healthMethod = new HealthMethod();
+        FoodMethod foodMethod = new FoodMethod();
         while (scanner.hasNext()) {
             String type = scanner.next();
             String foodType = "";
@@ -34,12 +36,14 @@ public class Server {
                 boolean hasProducts = scanner.next().equals("true");
 
                 if (type.equals("HealthShop")) {
-                    loginToUserDB.put(login, new HealthShop(login, password));
+                    HealthShop healthShop = (HealthShop) healthMethod.createInstance(login, password);
+                    loginToUserDB.put(login, healthShop);
                 } else {
                     Food food = Food.VEGETABLE;
                     if (foodType.equals("GROCERY")) food = Food.GROCERY;
                     if (foodType.equals("FRUIT")) food = Food.FRUIT;
-                    loginToUserDB.put(login, new FoodShop(login, password).setShopType(food));
+                    FoodShop shop = (FoodShop) foodMethod.createInstance(login, password);
+                    loginToUserDB.put(login, shop.setShopType(food));
                 }
 
 

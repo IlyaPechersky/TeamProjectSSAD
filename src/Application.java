@@ -63,12 +63,15 @@ public class Application {
             else main(new String[]{});
         }
 
+        FoodMethod foodMethod = new FoodMethod();
+        HealthMethod healthMethod = new HealthMethod();
+
         if (userType.equals("client")) {
             user = new User(login, password);
         } else if (shopType.equals("HEALTH")) {
-            user = new HealthShop(login, password);
+            user = healthMethod.createInstance(login, password);
         } else {
-            user = new FoodShop(login, password).setShopType(food);
+            user = foodMethod.createInstance(login, password);
         }
 
         System.out.println("You are registered");
