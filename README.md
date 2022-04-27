@@ -13,6 +13,8 @@ SSAD course team project
 
 We dicided to use factory method to be able to initialize both types of shops(Food and Health).
 **What is why** we have **Factory method** and **FoodMethod + HealthMood** classes which extend from FactoryMethod.
+**The main reason** that we use this patern is the fact that in the future we may need to expand the line of stores that will have differences. 
+Because of the factory method we will need to do much less actions and safely call the initialization of a new type of store using an already created generic factory method.
 
 # Project structure
 
