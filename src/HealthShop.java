@@ -16,6 +16,9 @@ public class HealthShop extends AbstractShop implements ChatMember {
 
     @Override
     public void printChats() {
+        if (chatList.isEmpty()) {
+            System.out.println("No chats there");
+        }
         for (Chat chat : chatList) {
             chat.printChat(this);
         }
