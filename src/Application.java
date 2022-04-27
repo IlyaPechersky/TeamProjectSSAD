@@ -97,6 +97,11 @@ public class Application {
             userInterface.startProcess(scanner);
         }
 
+        if (user instanceof AbstractShop) {
+            ShopInterface shopInterface = new ShopInterface((AbstractShop) user);
+            shopInterface.startProcess(scanner);
+        }
+
         server.loadDataBase();
     }
 }

@@ -16,4 +16,12 @@ public class Chat {
         messages.add(message);
         return true;
     }
+
+    public void printChat(AbstractUser sender) {
+        if (sender instanceof User) {
+            System.out.print(healthShop + " ");
+        } else {
+            System.out.print(user + " ");
+        }
+    }
 }

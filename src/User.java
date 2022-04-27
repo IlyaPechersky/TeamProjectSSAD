@@ -10,6 +10,13 @@ public class User extends AbstractUser implements ChatMember {
     }
 
     @Override
+    public void printChats() {
+        for (Chat chat : chatList) {
+            chat.printChat(this);
+        }
+    }
+
+    @Override
     public boolean sendMessage(int chatId, String message) {
         if (chatId >= chatList.size()) {
             System.out.println("No such a chat...");
