@@ -12,7 +12,9 @@ SSAD course team project
 ### **Factory Method** - is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
 We dicided to use factory method to be able to initialize both types of shops(Food and Health).
-**What is why** we have **Factory method** and **FoodMethod + HealthMood** classes which extend from FactoryMethod.
+**What is why** we have **Factory method** and **FoodMethod + HealthMood** classes which extend from FactoryMethod. <br>
+**The main reason** that we use this patern is the fact that in the future we may need to expand the line of stores that will have differences. <br>
+Because of the factory method we will need to do much less actions and safely call the initialization of a new type of store using an already created generic factory method.
 
 # Project structure
 
