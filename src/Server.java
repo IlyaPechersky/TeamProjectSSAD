@@ -23,21 +23,17 @@ public class Server {
     }
 
     public boolean checkUser(String login, String password) {
-        if (loginToPasswordDB.containsKey(login)) {
-            System.out.println("No such User: {" + login + "}");
+        if (!loginToPasswordDB.containsKey(login)) {
             return false;
         }
         if (loginToPasswordDB.get(login).equals(password)) {
-            System.out.println("Correct");
             return true;
         }
-        System.out.println("Password is incorrect");
         return false;
     }
 
     public boolean registerUser(String login, String password, AbstractUser user) {
         if (loginToPasswordDB.containsKey(login)) {
-            System.out.println("Such a login is already used, try another...");
             return false;
         }
         // todo add checker for correctness;

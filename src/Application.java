@@ -10,8 +10,7 @@ public class Application {
 
         System.out.print("login: ");
         String login = scanner.next();
-        System.out.println();
-        System.out.println("password: ");
+        System.out.print("password: ");
         String password = scanner.next();
 
         if (server.checkUser(login, password)) {
@@ -31,8 +30,7 @@ public class Application {
 
         System.out.print("login: ");
         String login = scanner.next();
-        System.out.println();
-        System.out.println("password: ");
+        System.out.print("password: ");
         String password = scanner.next();
         String shopType = "";
         Food food = Food.FRUIT;
