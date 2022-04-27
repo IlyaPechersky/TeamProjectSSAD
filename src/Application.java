@@ -92,6 +92,11 @@ public class Application {
             signUp(userType);
         }
 
+        if (user instanceof User) {
+            UserInterface userInterface = new UserInterface((User) user);
+            userInterface.startProcess(scanner);
+        }
+
         server.loadDataBase();
     }
 }

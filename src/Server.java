@@ -99,8 +99,17 @@ public class Server {
     }
 
     public void printShopList() {
-        //todo
+        for (int i = 0; i < shopList.size(); i++) {
+            System.out.println(shopList.get(i) + " id: " + i);
+        }
+    }
 
+    public AbstractShop getShop(int id) {
+        if (id >= shopList.size()) {
+            System.out.println("No such a shop, unfortunately...");
+            return null;
+        }
+        return shopList.get(id);
     }
 
     public boolean registerUser(String login, String password, AbstractUser user) {
