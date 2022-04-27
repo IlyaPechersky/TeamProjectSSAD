@@ -105,12 +105,27 @@ public class Server {
 
     public boolean registerUser(String login, String password, AbstractUser user) {
         if (loginToPasswordDB.containsKey(login)) {
+            System.out.println("This login already exit, please SignIn or create a new login:");
             return false;
         }
-        // todo add checker for correctness;
-        loginToPasswordDB.put(login, password);
-        loginToUserDB.put(login, user);
-        return true;
+        if (Checker.checkLogin(login) && Checker.checkPassword(password)) {
+            loginToPasswordDB.put(login, password);
+            loginToUserDB.put(login, user);
+            return true;
+        } else {
+            System.out.println("You have incorrect login or password, please re-enter following these rules:");
+            System.out.println("""
+                    For login:
+                    1. Length of pass - more or equal than 8 characters
+                    2. Should contain at least 1 letter
+                    3. Only letters, digits and symbol "_\"""");
+            System.out.println("""
+                    For password:
+                    1. Length of pass - more or equal than 8 characters
+                    2. Should contain at least 1 capital letter, 1 lowercase letter and 1 digit
+                    3. Only letters, digits and symbol "_\"""");
+            return false;
+        }
     }
 
     public AbstractUser getUser(String login) {
