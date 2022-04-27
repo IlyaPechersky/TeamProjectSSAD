@@ -24,6 +24,8 @@ Because of the factory method we will need to do much less actions and safely ca
 - [`README.md`](README.md) - text file for structuring information for a project
 - [`database.txt`](database.txt) - database of users/shops with their logins and passwords
 
+A description of the classes and their functionality can be found in the folder [`src`](src)
+
 # Build and launch
 
 ### Example (Windows)
